@@ -5,5 +5,17 @@ baseCommand:
 - reheader
 class: CommandLineTool
 cwlVersion: v1.0
-doc: '>-Usage: samtools reheader <in.header.sam> <in.bam>'
 id: samtools_reheader
+doc: 'samtools reheader <in.header.sam> <in.bam>'
+
+inputs:
+- id: in_header_sam
+  inputBinding:
+    position: 0
+  type: File
+- id: in_bam
+  inputBinding:
+    position: 1
+  type: File
+
+outputs: []

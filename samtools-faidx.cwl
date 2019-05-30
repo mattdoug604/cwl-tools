@@ -6,10 +6,16 @@ baseCommand:
 class: CommandLineTool
 cwlVersion: v1.0
 id: samtools_faidx
+doc: faidx <in.fasta> [<reg> [...]]
+
 inputs:
-- doc: ''
-  id: help
+- id: in_fasta
   inputBinding:
     position: 0
-    prefix: -help
-  type: boolean
+  type: File
+- id: region
+  inputBinding:
+    position: 1
+  type: string?
+
+outputs: []

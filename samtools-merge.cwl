@@ -5,15 +5,9 @@ baseCommand:
 - merge
 class: CommandLineTool
 cwlVersion: v1.0
-doc: '>-Usage:   samtools merge [-nr] [-h inh.sam] <out.bam> <in1.bam> <in2.bam> [...]'
+doc: 'samtools merge [-nr] [-h inh.sam] <out.bam> <in1.bam> <in2.bam> [...]'
 id: samtools_merge
 inputs:
-- doc: inh.sam] <out.bam> <in1.bam> <in2.bam> [...]
-  id: nr
-  inputBinding:
-    position: 0
-    prefix: -nr
-  type: boolean?
 - doc: sort by read names
   id: n
   inputBinding:
@@ -55,4 +49,12 @@ inputs:
   inputBinding:
     position: 0
     prefix: -h
-  type: File?
+  type: boolean?
+- id: in_bam
+  inputBinding:
+    position: 1
+  type:
+    type: array
+    items: File
+
+outputs: []
